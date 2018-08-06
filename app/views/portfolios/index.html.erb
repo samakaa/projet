@@ -6,5 +6,5 @@
           <p><%= p.title %> </p>
           <p><%= p.subtitle %> </p>
           <p><%= p.body %> </p>
-          <p><%= image_tag p.thumb_image %> </p>
+          <p><%= image_tag p.thumb_image unless p.thumb_image.nil? %> </p>
     <% end %>
