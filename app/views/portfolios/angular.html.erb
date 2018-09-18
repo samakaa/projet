@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<center>
+        <h1> Angular Portfolio items</h1>
+                                </center>
+ <%=  link_to "create a New portfolio" , new_portfolio_url %>
+    <% @angular_portfolio_items.each do |p| %>
+          <p><%=  link_to p.title , portfolio_sh_path(p) %> </p>
+          <p><%= p.subtitle %> </p>
+          <p><%= p.body %> </p>
+          <p><%= image_tag p.thumb_image unless p.thumb_image.nil? %> </p>
+          <%= link_to "Edit", edit_portfolio_path(p) %>
+
+          <br>
+          <%= link_to 'Destroy', p , method: :delete, data: { confirm: 'Are you sure?' } %>
+          <hr>
+
+    <% end %>
